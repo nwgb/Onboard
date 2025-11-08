@@ -1,0 +1,77 @@
+# *** SERVER NAME ***
+# Displayed in welcome message as 'Welcome to (SERVER_NAME), (player_name)'
+SERVER_NAME: "§x§F§F§5§5§5§5L§x§F§F§5§A§5§0e§x§F§F§5§F§4§Bg§x§F§F§6§4§4§6e§x§F§F§6§9§4§1n§x§F§F§6§E§3§Cd§x§F§F§7§3§3§7a§x§F§F§7§8§3§2r§x§F§F§7§D§2§Dy §x§F§F§8§7§2§3H§x§F§F§8§C§1§Ea§x§F§F§9§1§1§9r§x§F§F§9§6§1§4d§x§F§F§9§B§0§Fc§x§F§F§A§0§0§Ao§x§F§F§A§5§0§5r§x§F§F§A§A§0§0e§r"
+
+# *** GROUP ***
+# LuckPerm group settings. Players in the PRE_ONBOARD_GROUP will be onboarded and assigned to POST_ONBOARD_GROUP upon
+# accepting the rules and completing the onboard sequence
+PRE_ONBOARD_GROUP: "default"
+POST_ONBOARD_GROUP: "player"
+
+# *** LOCATION ***
+# The world and coordinates that the player will be teleported to for onboarding
+POS_WORLD: "world"
+POS_X: 0
+POS_Y: 120
+POS_Z: 0
+POS_YAW: 0
+POS_PITCH: 0
+
+# *** RULES SEQUENCE ***
+# Rules and other messages displayed prior to the player being prompted to accept the rules
+RULES_SEQUENCE_CONTENT:
+  - TITLE: ""
+    SUBTITLE: "You are about to join a §cpermadeath§r, semi-anarchy server."
+  - TITLE: "§6⚠"
+    SUBTITLE: "Pay attention to the following rules."
+  - TITLE: "§a\uD83D\uDDE1"
+    SUBTITLE: "Griefing, killing and stealing are allowed everywhere and at all times."
+  - TITLE: "§c☠"
+    SUBTITLE: "If you die you are §cbanned forever§r. You cannot rejoin on another account."
+  - TITLE: "§c\uD83D\uDEAB"
+    SUBTITLE: "Use of hacked clients or mods that give an unfair advantage are not allowed."
+  - TITLE: "§c\uD83C\uDF70"
+    SUBTITLE: "Use of 'pie-ray' or entity counter to find bases or structures is not allowed."
+  - TITLE: "§a\uD83C\uDF0E"
+    SUBTITLE: "Fair play minimaps are allowed, but must have cave mode and entity radar disabled."
+  - TITLE: "§c\uD83D\uDD27"
+    SUBTITLE: "Lag machines and overuse of server resource is not allowed."
+  - TITLE: "§c🪳"
+    SUBTITLE: "Exploitation of bugs is not allowed, with the exception of TNT, rail and gravity-block duping."
+  - TITLE: "§c\uD83D\uDCAC"
+    SUBTITLE: "Slurs, hate speech, extreme harassment and advertising are not allowed."
+  - TITLE: ""
+    SUBTITLE: "By joining it is assumed that you fully understand and accept these rules."
+
+# How many seconds each rules message should be displayed for, as long as fade in and fade out times
+RULES_SEQUENCE_DURATION: 5
+RULES_SEQUENCE_FADE_IN: 1
+RULES_SEQUENCE_FADE_OUT: 1
+
+# *** PROMPT ACCEPT ***
+# The message displayed prompting the player to accept the rules
+PROMPT_ACCEPT:
+  - TITLE: ""
+    SUBTITLE: "Type §a/accept§r to confirm that you will comply with the rules"
+PROMPT_CHAT: "§4Type /rules to access the rules at any time§r\n§chttps://wiki.legendaryhc.org/index.php/Rules"
+
+# *** JOIN SEQUENCE ***
+# Messages played after the player has accepted the rules and prior to completing onboarding
+JOIN_SEQUENCE_CONTENT:
+  - TITLE: "§cThis is a world without return"
+    SUBTITLE: ""
+  - TITLE: "§cThere are no second chances"
+    SUBTITLE: ""
+  - TITLE: "§cThis is your one life"
+    SUBTITLE: ""
+
+# How many seconds each join message should be displayed for, as long as fade in and fade out times
+JOIN_SEQUENCE_DURATION: 3
+JOIN_SEQUENCE_FADE_IN: 1
+JOIN_SEQUENCE_FADE_OUT: 1
+
+# Random spawn range
+RANDOM_SPAWN_X1: -3000
+RANDOM_SPAWN_Z1: -3000
+RANDOM_SPAWN_X2: 3000
+RANDOM_SPAWN_Z2: 3000
