@@ -24,12 +24,28 @@ public class RulesSequence {
         // Ensure that player does not run /accept before all rules have been displayed
         plugin.canAcceptRules.put(player.getUniqueId(), false);
 
-        // Freeze player in spectator mode at config location
+        // Freeze player in config specified gamemode at location of onboarding
         Location onboardLocation = plugin.getConfigData().getOnboardLocation().toLocation();
 
         plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
             player.teleport(onboardLocation);
-            player.setGameMode(GameMode.SPECTATOR);
+            switch(plugin.getConfigData().getOnboardGamemode()) {
+                case "SURVIVAL":
+                    player.setGameMode(GameMode.SURVIVAL);
+                    break;
+                case "CREATIVE":
+                    player.setGameMode(GameMode.CREATIVE);
+                    break;
+                case "ADVENTURE":
+                    player.setGameMode(GameMode.ADVENTURE);
+                    break;
+                case "SPECTATOR":
+                    player.setGameMode(GameMode.SPECTATOR);
+                    break;
+            }
+            player.setGravity(false);
+            player.setInvisible(true);
+            player.setInvulnerable(true);
 
         }, 1L);
 

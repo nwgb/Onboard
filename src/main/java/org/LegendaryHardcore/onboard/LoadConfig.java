@@ -34,6 +34,8 @@ public class LoadConfig {
             String preOnboardGroup = config.getString("PRE_ONBOARD_GROUP", "DEFAULT");
             String postOnboardGroup = config.getString("POST_ONBOARD_GROUP", "player");
 
+            String onboardGamemode = config.getString("ONBOARD_GAMEMODE", "SURVIVAL");
+
             // Location
             PlayerLocation onboardLocation = new PlayerLocation(
                     config.getString("POS_WORLD", "world"),
@@ -69,6 +71,7 @@ public class LoadConfig {
                     serverName,
                     preOnboardGroup,
                     postOnboardGroup,
+                    onboardGamemode,
                     onboardLocation,
                     rulesContent,
                     rulesDuration,

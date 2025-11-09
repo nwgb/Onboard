@@ -61,9 +61,12 @@ public class JoinSequence {
         final int randomSpawnZ2 = plugin.getConfigData().getRandomSpawnZ2();
 
         plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
-            // Remove blindness effect and set gamemdode back to survival
+            // Clear effects and set gamemdode back to survival
             player.removePotionEffect(PotionEffectType.BLINDNESS);
             player.setGameMode(GameMode.SURVIVAL);
+            player.setGravity(true);
+            player.setInvisible(false);
+            player.setInvulnerable(false);
 
             // Teleport to random location
             String mainWorldName = plugin.getConfigData().getOnboardLocation().worldName();
@@ -72,7 +75,7 @@ public class JoinSequence {
             int z = ThreadLocalRandom.current().nextInt(randomSpawnZ1, randomSpawnZ2);
             int y = mainWorld.getHighestBlockYAt(x, z);
 
-            Location randomLoc = new Location(mainWorld, x + 0.5, y + 1, z + 0.5); // +0.5 to center, +1 to be above ground
+            Location randomLoc = new Location(mainWorld, x + 0.5, y + 1, z + 0.5);
             player.teleport(randomLoc);
 
             // Move player to post-onboard group

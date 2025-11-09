@@ -11,6 +11,7 @@ public final class ConfigData {
     private final String serverName;
     private final String preOnboardGroup;
     private final String postOnboardGroup;
+    private final String onboardGamemode;
     private final PlayerLocation onboardLocation;
     private final List<TitleContent> rulesSequenceContent;
     private final int rulesSequenceDuration;
@@ -61,6 +62,7 @@ public final class ConfigData {
             String serverName,
             String preOnboardGroup,
             String postOnboardGroup,
+            String onboardGamemode,
             PlayerLocation onboardLocation,
             List<TitleContent> rulesSequenceContent,
             int rulesSequenceDuration,
@@ -79,6 +81,7 @@ public final class ConfigData {
         this.serverName = serverName;
         this.preOnboardGroup = preOnboardGroup;
         this.postOnboardGroup = postOnboardGroup;
+        this.onboardGamemode = onboardGamemode;
         this.onboardLocation = onboardLocation;
         this.rulesSequenceContent = rulesSequenceContent;
         this.rulesSequenceDuration = rulesSequenceDuration;
@@ -105,6 +108,10 @@ public final class ConfigData {
 
     public String getPostOnboardGroup() {
         return postOnboardGroup;
+    }
+
+    public String getOnboardGamemode() {
+        return onboardGamemode;
     }
 
     public PlayerLocation getOnboardLocation() {
