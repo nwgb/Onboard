@@ -28,7 +28,7 @@ public class LoadConfig {
 
         try {
             // Server name
-            String serverName = config.getString("SERVER_NAME","LEGENDARY HARDCORE");
+            String serverName = config.getString("SERVER_NAME");
 
             // LP pre-onboard and post-onboard groups
             String preOnboardGroup = config.getString("PRE_ONBOARD_GROUP", "DEFAULT");
@@ -38,19 +38,19 @@ public class LoadConfig {
 
             // Location
             PlayerLocation onboardLocation = new PlayerLocation(
-                    config.getString("POS_WORLD", "world"),
-                    config.getDouble("POS_X", 0),
-                    config.getDouble("POS_Y", 60),
-                    config.getDouble("POS_Z", 0),
-                    (float) config.getDouble("POS_YAW", 0),
-                    (float) config.getDouble("POS_PITCH", 0)
+                    config.getString("POS_WORLD"),
+                    config.getDouble("POS_X"),
+                    config.getDouble("POS_Y"),
+                    config.getDouble("POS_Z"),
+                    (float) config.getDouble("POS_YAW"),
+                    (float) config.getDouble("POS_PITCH")
             );
 
             // Rules sequence
             List<TitleContent> rulesContent = loadTitleContents(config.getList("RULES_SEQUENCE_CONTENT"));
-            int rulesDuration = config.getInt("RULES_SEQUENCE_DURATION", 5);
-            int rulesSequenceFadeIn = config.getInt("RULES_SEQUENCE_FADE_IN", 0);
-            int rulesSequenceFadeOut = config.getInt("RULES_SEQUENCE_FADE_OUT", 0);
+            int rulesDuration = config.getInt("RULES_SEQUENCE_DURATION");
+            int rulesSequenceFadeIn = config.getInt("RULES_SEQUENCE_FADE_IN");
+            int rulesSequenceFadeOut = config.getInt("RULES_SEQUENCE_FADE_OUT");
 
             // Prompt accept (title and chat message)
             List<TitleContent> promptAccept = loadTitleContents(config.getList("PROMPT_ACCEPT"));
@@ -58,15 +58,15 @@ public class LoadConfig {
 
             // Join sequence
             List<TitleContent> joinContent = loadTitleContents(config.getList("JOIN_SEQUENCE_CONTENT"));
-            int joinDuration = config.getInt("JOIN_SEQUENCE_DURATION", 5);
-            int joinSequenceFadeIn = config.getInt("JOIN_SEQUENCE_FADE_IN", 0);
-            int joinSequenceFadeOut = config.getInt("JOIN_SEQUENCE_FADE_OUT", 0);
+            int joinDuration = config.getInt("JOIN_SEQUENCE_DURATION");
+            int joinSequenceFadeIn = config.getInt("JOIN_SEQUENCE_FADE_IN");
+            int joinSequenceFadeOut = config.getInt("JOIN_SEQUENCE_FADE_OUT");
 
             // Random spawn
-            int randomSpawnX1 = config.getInt("RANDOM_SPAWN_X1", 0);
-            int randomSpawnZ1 = config.getInt("RANDOM_SPAWN_Z1", 0);
-            int randomSpawnX2 = config.getInt("RANDOM_SPAWN_X2", 0);
-            int randomSpawnZ2 = config.getInt("RANDOM_SPAWN_Z2", 0);
+            int randomSpawnX1 = config.getInt("RANDOM_SPAWN_X1");
+            int randomSpawnZ1 = config.getInt("RANDOM_SPAWN_Z1");
+            int randomSpawnX2 = config.getInt("RANDOM_SPAWN_X2");
+            int randomSpawnZ2 = config.getInt("RANDOM_SPAWN_Z2");
             return new ConfigData(
                     serverName,
                     preOnboardGroup,

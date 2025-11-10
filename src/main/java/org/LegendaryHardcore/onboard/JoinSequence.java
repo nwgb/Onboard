@@ -54,21 +54,20 @@ public class JoinSequence {
             current_delay += delay;
         }
 
-        // Reset player effects, gamemode, etc. and random teleport
-        final int randomSpawnX1 = plugin.getConfigData().getRandomSpawnX1();
-        final int randomSpawnZ1 = plugin.getConfigData().getRandomSpawnZ1();
-        final int randomSpawnX2 = plugin.getConfigData().getRandomSpawnX2();
-        final int randomSpawnZ2 = plugin.getConfigData().getRandomSpawnZ2();
-
         plugin.getServer().getScheduler().runTaskLater(plugin, () -> {
             // Clear effects and set gamemdode back to survival
             player.removePotionEffect(PotionEffectType.BLINDNESS);
-            player.setGameMode(GameMode.SURVIVAL);
             player.setGravity(true);
+            player.setGameMode(GameMode.SURVIVAL);
             player.setInvisible(false);
             player.setInvulnerable(false);
 
             // Teleport to random location
+            final int randomSpawnX1 = plugin.getConfigData().getRandomSpawnX1();
+            final int randomSpawnZ1 = plugin.getConfigData().getRandomSpawnZ1();
+            final int randomSpawnX2 = plugin.getConfigData().getRandomSpawnX2();
+            final int randomSpawnZ2 = plugin.getConfigData().getRandomSpawnZ2();
+
             String mainWorldName = plugin.getConfigData().getOnboardLocation().worldName();
             World mainWorld = Bukkit.getWorld(mainWorldName);
             int x = ThreadLocalRandom.current().nextInt(randomSpawnX1, randomSpawnX2);
